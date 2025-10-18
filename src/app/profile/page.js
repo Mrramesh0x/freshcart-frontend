@@ -5,9 +5,10 @@ import { toast, ToastContainer } from "react-toastify";
 
 export default function ProfilePage() {
   const [user, setUser] = useState(null);
-  const token = localStorage.getItem("token");
+  
 
   useEffect(() => {
+  const token = localStorage.getItem("token");
     const fetchProfile = async () => {
       try {
         const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`, {

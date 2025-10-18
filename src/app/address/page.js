@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function AddressPage() {
   const [addresses, setAddresses] = useState([]);
@@ -12,14 +13,14 @@ export default function AddressPage() {
     city: "",
     state: "",
   });
-  const [token, setToken] = useState(null); // Store token after client render
+  const [token, setToken] = useState(null); // token from localStorage
+  const [loading, setLoading] = useState(true);
 
-  // Get token only on client-side
+  // Get token safely on client side
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
-    if (savedToken) {
-      setToken(savedToken);
-    }
+    if (savedToken) setToken(savedToken);
+    setLoading(false); // stop loading even if token is null
   }, []);
 
   // Fetch addresses once token is available
@@ -36,7 +37,8 @@ export default function AddressPage() {
         );
         setAddresses(data);
       } catch (err) {
-        console.log(err);
+        console.error(err);
+        toast.error("Failed to fetch addresses");
       }
     };
 
@@ -49,6 +51,8 @@ export default function AddressPage() {
   };
 
   const handleAddAddress = async () => {
+    if (!token) return toast.error("User not authenticated");
+
     try {
       const { data } = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/api/addresses`,
@@ -61,9 +65,12 @@ export default function AddressPage() {
       setShowForm(false);
       setNewAddress({ landmark: "", pincode: "", city: "", state: "" });
     } catch (err) {
+      console.error(err);
       toast.error("Failed to save address");
     }
   };
+
+  if (loading) return <p>Loading...</p>; // simple client-side fallback
 
   return (
     <div className="address-page">
