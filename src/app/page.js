@@ -15,7 +15,6 @@ const Home = () => {
   }, []);
 
   const {data:products,status}= useSelector((state)=> state.product)
-  console.log(products)
 if (status === "loading") return <p className="no-products">Loading products...</p>
 if (status === "error") return <h1 style={{display:'flex', justifyContent:'center'}}> Server Error</h1>
   const addToCart = (p) => {

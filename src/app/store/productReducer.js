@@ -33,5 +33,6 @@ export const fetchProducts = createAsyncThunk("products/fetch", async () => {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`);
       const res = await response.json();
       return res;
+    
 
 })
