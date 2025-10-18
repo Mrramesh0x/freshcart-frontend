@@ -12,20 +12,35 @@ export default function AddressPage() {
     city: "",
     state: "",
   });
+  const [token, setToken] = useState(null); // Store token after client render
 
-  const token = localStorage.getItem("token");
-
+  // Get token only on client-side
   useEffect(() => {
+    const savedToken = localStorage.getItem("token");
+    if (savedToken) {
+      setToken(savedToken);
+    }
+  }, []);
+
+  // Fetch addresses once token is available
+  useEffect(() => {
+    if (!token) return;
+
     const fetchAddresses = async () => {
       try {
-        const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/addresses`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const { data } = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/addresses`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         setAddresses(data);
       } catch (err) {
+        console.log(err);
       }
     };
-    if (token) fetchAddresses();
+
+    fetchAddresses();
   }, [token]);
 
   const handleInputChange = (e) => {
@@ -52,7 +67,7 @@ export default function AddressPage() {
 
   return (
     <div className="address-page">
-       <ToastContainer position="top-center" autoClose={1000} />
+      <ToastContainer position="top-center" autoClose={1000} />
       <div className="address-card-container">
         <h2 className="address-title">My Addresses</h2>
 
@@ -118,7 +133,9 @@ export default function AddressPage() {
               <div key={idx} className="address-card">
                 <p>
                   {addr.landmark}, {addr.city}, {addr.state} - {addr.pincode}
-                   <span className="remove-wrapper"><button className="remove-address">Delete</button></span>
+                  <span className="remove-wrapper">
+                    <button className="remove-address">Delete</button>
+                  </span>
                 </p>
               </div>
             ))}
