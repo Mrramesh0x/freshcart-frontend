@@ -1,0 +1,111 @@
+.category-page {
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background: #f8f8f8;
+  min-height: 100vh;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #4a00e0;
+}
+
+/* Horizontal scroll for categories */
+.category-grid {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+/* Hide default scrollbar */
+.category-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual category card */
+.category-card {
+  flex: 0 0 auto;
+  width: 120px;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  background: #fafafa;
+  padding: 10px;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.category-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a00e0;
+  text-align: center;
+}
+
+/* Optional: outer container for scroll padding */
+.category-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+/* 🔹 Responsive adjustments */
+@media (max-width: 768px) {
+  .category-card {
+    width: 100px;
+    min-width: 100px;
+    padding: 8px;
+  }
+
+  .category-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .category-name {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    width: 90px;
+    min-width: 90px;
+    padding: 6px;
+  }
+
+  .category-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .category-name {
+    font-size: 12px;
+  }
+
+  .category-grid {
+    gap: 10px;
+  }
+}

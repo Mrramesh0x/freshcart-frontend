@@ -1,0 +1,243 @@
+.navbar {
+  background: linear-gradient(90deg, #8e2de2, #4a00e0);
+  padding: 0 16px;
+  font-family: "Poppins", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo-icon {
+  font-size: 22px;
+}
+
+.delivery-to {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.15);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delivery-label {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.delivery-city-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.down-arrow {
+  font-size: 12px;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* consistent gap between all buttons */
+}
+
+.login-nav-btn,
+.signup-nav-btn,
+.logout-nav-btn,
+.cart-nav-btn {
+  padding: 10px 22px; /* same padding for all buttons */
+  font-size: 12px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap; /* prevent wrapping */
+}
+
+.login-nav-btn,
+.signup-nav-btn,
+.logout-nav-btn {
+  background: #fff;
+  color: #4a00e0;
+}
+
+.login-nav-btn:hover,
+.signup-nav-btn:hover,
+.logout-nav-btn:hover {
+  background: #f0f0f0;
+}
+
+.cart-nav-btn {
+  background: #fff;
+  color: #4a00e0;
+  font-weight: 600;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.2s ease;
+}
+
+.cart-nav-btn:hover {
+  background: #f0f0f0;
+}
+
+.cart-nav-btn::after {
+  content: attr(data-count);
+  position: absolute;
+  top: 0px;
+  right: 6px;
+  background: black;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Dropdown menu */
+.user-menu {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  z-index: 999;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  padding: 8px 12px;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background: #f0f0f0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 16px;
+  }
+
+  .logo-icon {
+    font-size: 20px;
+  }
+
+  .delivery-to {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+
+  .delivery-city-wrap {
+    font-size: 12px;
+  }
+
+  .auth-buttons {
+    gap: 8px;
+  }
+
+  .login-nav-btn,
+  .signup-nav-btn,
+  .cart-nav-btn {
+    padding: 8px 16px; /* scale down slightly on tablets */
+    font-size: 11px;
+  }
+
+  .cart-nav-btn::after {
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 14px;
+  }
+
+  .logo-icon {
+    font-size: 18px;
+  }
+
+  .delivery-to {
+    display: none; /* hide delivery info on tiny screens */
+  }
+
+  .auth-buttons {
+    gap: 6px;
+  }
+
+  .login-nav-btn,
+  .signup-nav-btn,
+  .cart-nav-btn {
+    padding: 6px 12px; /* keep buttons consistent */
+    font-size: 11px;
+  }
+
+  .cart-nav-btn::after {
+    font-size: 8px;
+    padding: 1px 3px;
+  }
+
+  .dropdown-menu {
+    right: -10px;
+    top: 35px;
+    min-width: 120px;
+  }
+
+  .dropdown-menu a,
+  .dropdown-menu button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}

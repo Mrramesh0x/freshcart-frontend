@@ -1,0 +1,126 @@
+/* 🔹 Wrapper */
+.verify-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  padding: 20px; /* ensure spacing on small screens */
+}
+
+/* 🔹 Container */
+.verify-container {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+/* 🔹 Heading & Text */
+.verify-heading {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.verify-subtext {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* 🔹 Form */
+.verify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.verify-input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 3px;
+  transition: border-color 0.2s;
+}
+
+.verify-input:focus {
+  border-color: #007bff;
+}
+
+/* 🔹 Resend Link */
+.verify-resend {
+  font-size: 14px;
+  color: #666;
+}
+
+.verify-resend-link {
+  color: #007bff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.verify-resend-link:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Verify Button */
+.verify-btn {
+  padding: 12px;
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.verify-btn:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.verify-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 480px) {
+  .verify-container {
+    padding: 24px 16px;
+  }
+
+  .verify-heading {
+    font-size: 20px;
+  }
+
+  .verify-subtext {
+    font-size: 13px;
+  }
+
+  .verify-input {
+    font-size: 15px;
+    padding: 10px;
+    letter-spacing: 2px;
+  }
+
+  .verify-btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .verify-resend {
+    font-size: 13px;
+  }
+}

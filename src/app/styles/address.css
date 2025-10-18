@@ -1,0 +1,163 @@
+.address-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+  background: #f8f8f8;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.address-card-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 100%;
+}
+
+.address-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4a00e0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.address-empty {
+  text-align: center;
+}
+
+.address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 15px;
+}
+
+.address-form input {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.address-list {
+  margin-top: 20px;
+}
+
+.address-card {
+  padding: 14px 18px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: #fafafa;
+  font-size: 14px;
+  color: #333;
+}
+
+.address-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+  margin-top: 10px;
+}
+
+.add-btn {
+  background: #4a00e0;
+  color: #fff;
+}
+
+.add-btn:hover {
+  background: #3600a8;
+}
+
+.save-btn {
+  background: green;
+  color: #fff;
+}
+.remove-wrapper{
+margin-left: 410px ;
+}
+
+
+.remove-address{
+padding: 0.4rem 0.8rem;
+  background: #f44336;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cancel-btn {
+  background: red;
+  color: #fff;
+}
+@media (max-width: 480px) {
+  .address-page {
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .address-card-container {
+    padding: 20px;
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .address-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .address-form input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .address-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .address-list {
+    width: 100%;
+  }
+
+  .address-card {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+
+  .remove-wrapper {
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .remove-address {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

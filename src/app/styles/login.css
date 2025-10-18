@@ -1,0 +1,123 @@
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  font-family: "Poppins", sans-serif;
+}
+
+.login-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-heading {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #4a00e0;
+}
+
+.login-form-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-input-field {
+  width: 90%;
+  max-width: 300px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #f8f8f8;
+  transition: 0.3s ease;
+  text-align: left;
+}
+
+.login-input-field:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(74, 0, 224, 0.25);
+}
+
+.login-btn {
+  width: 90%;
+  max-width: 300px;
+  padding: 14px 18px;
+  background: #6a11cb;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #5011a5;
+}
+
+.login-error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login-signup-text {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.login-signup-link {
+  color: #6a11cb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-signup-link:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Responsive Design for Mobile Phones */
+@media (max-width: 480px) {
+  .login-container {
+    width: 90%;
+    padding: 28px 20px;
+    border-radius: 12px;
+  }
+
+  .login-heading {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .login-input-field {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+
+  .login-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+
+  .login-signup-text {
+    font-size: 13px;
+    margin-top: 12px;
+  }
+}

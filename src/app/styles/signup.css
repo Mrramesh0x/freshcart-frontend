@@ -1,0 +1,69 @@
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  font-family: "Poppins", sans-serif;
+}
+
+.signup-form {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.signup-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #4a00e0;
+}
+
+.signup-input {
+  width: 90%;           /* ✅ keep same width as login */
+  max-width: 300px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #f8f8f8;
+  transition: 0.3s ease;
+  text-align: left;      /* ✅ text + placeholder start from left */
+}
+
+.signup-input:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(74, 0, 224, 0.25);
+}
+
+.signup-btn {
+  width: 90%;           /* ✅ matches input width */
+  max-width: 300px;
+  padding: 14px 18px;
+  background: #6a11cb;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: #5011a5;
+}
+
+.signup-message {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}

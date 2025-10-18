@@ -1,0 +1,81 @@
+.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #f8f8f8;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+
+.profile-card {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+}
+
+.profile-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4a00e0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile-info p {
+  font-size: 15px;
+  margin: 12px 0;
+  color: #333;
+}
+
+.profile-label {
+  font-weight: 600;
+  color: #4a00e0;
+  margin-right: 6px;
+}
+
+.verified {
+  color: green;
+  font-weight: 600;
+}
+
+.not-verified {
+  color: red;
+  font-weight: 600;
+}
+
+.profile-loading {
+  text-align: center;
+  font-size: 18px;
+  color: #4a00e0;
+  margin-top: 50px;
+}
+.change-btn, .verify-btn {
+  margin-left: 10px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.change-btn {
+  background: #007bff;
+  color: #fff;
+}
+.change-btn:hover {
+  background: #0056b3;
+}
+
+.verify-btn {
+  background: #ff9800;
+  color: #fff;
+}
+.verify-btn:hover {
+  background: #e68900;
+}
