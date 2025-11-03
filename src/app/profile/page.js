@@ -2,10 +2,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function ProfilePage() {
   const [user, setUser] = useState(null);
-  
+  const router = useRouter()
+   const handleRedirect = async () =>{
+router.push("/signup/verify")
+   }
 
   useEffect(() => {
   const token = localStorage.getItem("token");
@@ -17,12 +21,11 @@ export default function ProfilePage() {
         setUser(data);
       } catch (err) {
         toast.error("Please login to view your profile");
-        window.location.href = "/login";
       }
     };
 
     if (token) fetchProfile();
-  }, [token]);
+  }, []);
 
   if (!user) return <p className="profile-loading">Loading...</p>;
 
@@ -41,7 +44,7 @@ export default function ProfilePage() {
             <span className="profile-label">Email:</span> {user.email}{" "}
             <button className="change-btn">Change</button>
             {!user.isVerified && (
-              <button className="verify-btn">Verify Email</button>
+              <button onClick={handleRedirect} className="verify">Verify Email</button>
             )}
           </p>
 

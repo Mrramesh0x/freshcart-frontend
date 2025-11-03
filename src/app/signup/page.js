@@ -3,7 +3,6 @@ import React, { useState } from "react"
 import axios from "axios"
 import { useRouter } from "next/navigation"
 
-
 export default function SignupPage() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -11,28 +10,25 @@ export default function SignupPage() {
   const [message, setMessage] = useState("")
   const router = useRouter()
 
-  const handleSignup = async (e) => {
-    e.preventDefault()
+  const handleSignup = async () => {
     try {
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/signup`, {
-        name,
-        email,
-        password
-      })
-
-      if (res.status === 200) {
-        setMessage(res.data.messeage || "Signup Success 🎉")
-        router.push("/signup/verify")
-      }
-    } catch (err) {
-      console.log(err)
-      setMessage(err.response.data.message)
+      const res = await axios.post(
+        "https://freshcart-backend-9bxk.onrender.com/api/signup",
+        { name, email, password },
+        { withCredentials: true }
+      )
+      console.log(res)
+      setMessage("Signup successful! Redirecting to verification...")
+      setTimeout(() => router.push("/verify"), 1500)
+    } catch (error) {
+      console.error(error)
+      setMessage("Signup failed. Try again.")
     }
   }
 
   return (
     <div className="signup-page">
-      <form className="signup-form" onSubmit={handleSignup}>
+      <div className="signup-form">
         <h2 className="signup-title">Sign Up</h2>
 
         <input
@@ -62,12 +58,12 @@ export default function SignupPage() {
           required
         />
 
-        <button type="submit" className="signup-btn">
+        <button type="button" onClick={handleSignup} className="signup-btn">
           Sign Up
         </button>
 
         {message && <p className="signup-message">{message}</p>}
-      </form>
+      </div>
     </div>
   )
 }
