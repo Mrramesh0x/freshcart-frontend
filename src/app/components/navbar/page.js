@@ -11,6 +11,13 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef(null)
 
+  const [cityOpen, setCityOpen] = useState(false)
+const [city, setCity] = useState("Bijnor")
+const cityRef = useRef(null)
+
+const cities = ["Chandpur", "Nagina", "Dhampur", "Najibabad", "Bijnor"]
+
+
   useEffect(() => {
     const storedToken = localStorage.getItem("token")
     if (storedToken) {
@@ -29,6 +36,17 @@ export default function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside)
     }
   }, [])
+
+  useEffect(() => {
+  const handleClickOutside = (e) => {
+    if (cityRef.current && !cityRef.current.contains(e.target)) {
+      setCityOpen(false)
+    }
+  }
+  document.addEventListener("mousedown", handleClickOutside)
+  return () => document.removeEventListener("mousedown", handleClickOutside)
+}, [])
+
 
   const handleLogout = () => {
     localStorage.removeItem("token")
@@ -49,15 +67,41 @@ export default function Navbar() {
               </Link>
             </span>
           </div>
-          <div className="delivery-to">
-            <div className="delivery-location">
-              <span className="delivery-label">Delivering to</span>
-              <div className="delivery-city-wrap">
-                <span className="delivery-city">BIJNOR</span>
-                <SlArrowDown className="down-arrow" />
-              </div>
-            </div>
+        
+<div className="delivery-to">
+  <div
+    className="delivery-location"
+    ref={cityRef}
+    onClick={() => setCityOpen(!cityOpen)}
+  >
+    <span className="delivery-label">Delivering to</span>
+
+    <div className="delivery-city-wrap">
+      <span className="delivery-city">{city}</span>
+      <SlArrowDown className="down-arrow" />
+    </div>
+
+    {cityOpen && (
+      <div className="city-dropdown">
+        {cities.map((c) => (
+          <div
+            key={c}
+            className="city-option"
+            onClick={() => {
+              setCity(c)
+              setCityOpen(false)
+            }}
+          >
+            {c}
           </div>
+        ))}
+      </div>
+    )}
+  </div>
+</div>
+
+
+
         </div>
 
 
@@ -75,7 +119,7 @@ export default function Navbar() {
                 title="My Account"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
-                <FaRegUserCircle size={28} color="white" />
+                <FaRegUserCircle size={28} color="white" style={{cursor:"pointer"}}/>
               </div>
 
               {menuOpen && (
@@ -88,12 +132,6 @@ export default function Navbar() {
                   </Link>
                   <Link href="/address" onClick={() => setMenuOpen(false)}>
                     My Address
-                  </Link>
-                  <Link
-                    href="/change-password"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Change Password
                   </Link>
                   <button
                     onClick={() => {

@@ -35,7 +35,9 @@ export default function OrdersPage() {
     fetchOrders();
   }, []);
 
-  if (loading) return <h2 className="orders-loading">Loading Orders...</h2>;
+  if (loading) return  <div className="page-loader">
+      <div className="spinner"></div>
+    </div>;
   if (error) return <h2 className="orders-error">Login to view orders</h2>;
 
   return (

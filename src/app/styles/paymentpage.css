@@ -1,4 +1,4 @@
-/* 🔹 Checkout Page Base */
+
 .checkout-page {
   padding: 24px;
   font-family: "Poppins", sans-serif;
@@ -9,16 +9,16 @@
   align-items: flex-start;
 }
 
-/* Container that limits width */
+
 .checkout-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  max-width: 460px; /* slightly tighter */
+  max-width: 460px; 
 }
 
-/* Section Styling */
+
 .checkout-section {
   background: #fff;
   padding: 20px 22px;
@@ -35,7 +35,7 @@
 .new-add{
   margin-top: 10px;
 }
-/* Saved Addresses */
+
 .saved-addresses {
   margin-bottom: 16px;
 }
@@ -67,7 +67,7 @@
   border-color: #4a00e0;
 }
 
-/* Inputs */
+
 .checkout-section input[type="text"] {
   width: 100%;
   padding: 11px 12px;
@@ -84,7 +84,7 @@
   outline: none;
 }
 
-/* Payment Method */
+
 .payment-options {
   display: flex;
   flex-direction: column;
@@ -116,7 +116,7 @@
   opacity: 0.6;
 }
 
-/* Order Summary */
+
 .order-summary p {
   font-size: 15px;
   margin-bottom: 14px;
@@ -140,50 +140,31 @@
   background: #6a00ff;
 }
 
+
+
+
+
 @media (max-width: 480px) {
-  .checkout-page {
-    padding: 12px;
-    align-items: flex-start;
-  }
 
-  .checkout-container {
-    width: 100%;
-    max-width: 100%;
-    gap: 16px;
-  }
 
-  .checkout-section {
-    padding: 14px 16px;
-    border-radius: 12px;
-  }
-
-  .checkout-section h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .saved-addresses h4 {
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  .saved-addresses label {
-    font-size: 13px;
-    padding: 8px 10px;
-  }
-
-  .checkout-section input[type="text"] {
-    font-size: 13px;
-    padding: 8px 10px;
+  .payment-options {
+    gap: 8px;
   }
 
   .payment-options label {
-    font-size: 13px;
-    padding: 8px 10px;
+    display: inline-flex;       
+    align-items: center;
+    width: fit-content;         
+    max-width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal;         
   }
 
-  .place-order-btn {
-    font-size: 14px;
-    padding: 11px 0;
+  .payment-options input[type="radio"] {
+    margin-right: 10px;
+    flex-shrink: 0;
   }
 }

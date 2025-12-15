@@ -8,6 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+
 .address-card-container {
   background: #fff;
   padding: 30px 40px;
@@ -50,6 +51,7 @@
   margin-top: 10px;
 }
 
+
 .address-list {
   margin-top: 20px;
 }
@@ -63,6 +65,16 @@
   font-size: 14px;
   color: #333;
 }
+
+
+.address-card p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
 
 .address-btn {
   padding: 10px 16px;
@@ -87,13 +99,18 @@
   background: green;
   color: #fff;
 }
-.remove-wrapper{
-margin-left: 410px ;
+
+.cancel-btn {
+  background: red;
+  color: #fff;
 }
 
+.remove-wrapper {
+  flex-shrink: 0;
+}
 
-.remove-address{
-padding: 0.4rem 0.8rem;
+.remove-address {
+  padding: 0.4rem 0.8rem;
   background: #f44336;
   border: none;
   border-radius: 4px;
@@ -103,26 +120,21 @@ padding: 0.4rem 0.8rem;
   transition: background 0.3s;
 }
 
-.cancel-btn {
-  background: red;
-  color: #fff;
-}
+
 @media (max-width: 480px) {
   .address-page {
     padding: 12px;
-    flex-direction: column;
-    align-items: center;
   }
 
   .address-card-container {
-    padding: 20px;
-    width: 100%;
-    max-width: 95%;
+    padding: 18px;
+    max-width: 100%;
+    border-radius: 12px;
   }
 
   .address-title {
     font-size: 18px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .address-form input {
@@ -136,13 +148,9 @@ padding: 0.4rem 0.8rem;
   }
 
   .address-btn {
-    width: 100%;
-    padding: 12px;
+    width: 60%;
     font-size: 14px;
-  }
-
-  .address-list {
-    width: 100%;
+   margin-left: 70px;
   }
 
   .address-card {
@@ -150,10 +158,14 @@ padding: 0.4rem 0.8rem;
     padding: 12px 14px;
   }
 
+  .address-card p {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .remove-wrapper {
-    margin-left: 0;
-    display: flex;
-    justify-content: flex-end;
+    align-self: flex-end;
+    margin-top: 6px;
   }
 
   .remove-address {

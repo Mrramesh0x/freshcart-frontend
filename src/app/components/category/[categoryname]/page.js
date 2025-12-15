@@ -2,6 +2,7 @@
 import { add } from "@/app/store/cartReducer.js"
 import React, { useState, useEffect } from "react"
 import { useDispatch } from "react-redux"
+import { toast, ToastContainer } from "react-toastify";
 
 export default function ShopApp({ params }) {
    const { categoryname:cat } = React.use(params); 
@@ -27,10 +28,12 @@ export default function ShopApp({ params }) {
 
   const addToCart = (p) => {
     dispatch(add(p))
+    toast.success("Product added to cart")
   }
 
   return (
     <div className="shop-page">
+       <ToastContainer position="top-center" autoClose={1000} />
       <h2 className="shop-title">
         Selected Category:
           {cat ? `${cat.charAt(0).toUpperCase() + cat.slice(1)}` : "All Products"}

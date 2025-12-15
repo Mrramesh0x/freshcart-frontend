@@ -15,7 +15,14 @@ const Home = () => {
   }, []);
 
   const {data:products,status}= useSelector((state)=> state.product)
-if (status === "loading") return <p className="no-products">Loading products...</p>
+if (status === "loading") {
+  return (
+    <div className="page-loader">
+      <div className="spinner"></div>
+    </div>
+  )
+}
+
 if (status === "error") return <h1 style={{display:'flex', justifyContent:'center'}}> Server Error</h1>
   const addToCart = (p) => {
 dispatch(add(p))
@@ -49,7 +56,8 @@ toast.success("Product added to cart")
             </div>
           ))
         ) : (
-          <p className="no-products">Loading products...</p>
+          <div className='no-products'>Loading Products..
+    </div>
         )}
       </div>
     </div>

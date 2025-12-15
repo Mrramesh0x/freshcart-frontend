@@ -27,7 +27,9 @@ router.push("/signup/verify")
     if (token) fetchProfile();
   }, []);
 
-  if (!user) return <p className="profile-loading">Loading...</p>;
+  if (!user) return  <div className="page-loader">
+      <div className="spinner"></div>
+    </div>;
 
   return (
     <div className="profile-page">

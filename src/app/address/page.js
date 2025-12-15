@@ -13,17 +13,16 @@ export default function AddressPage() {
     city: "",
     state: "",
   });
-  const [token, setToken] = useState(null); // token from localStorage
+  const [token, setToken] = useState(null); 
   const [loading, setLoading] = useState(true);
 
-  // Get token safely on client side
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
     if (savedToken) setToken(savedToken);
-    setLoading(false); // stop loading even if token is null
+    setLoading(false); 
   }, []);
 
-  // Fetch addresses once token is available
+
   useEffect(() => {
     if (!token) return;
 
@@ -70,7 +69,7 @@ export default function AddressPage() {
     }
   };
 
-  if (loading) return <p>Loading...</p>; // simple client-side fallback
+  if (loading) return <p>Loading...</p>; 
 
   return (
     <div className="address-page">

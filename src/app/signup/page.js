@@ -19,7 +19,7 @@ export default function SignupPage() {
       )
       console.log(res)
       setMessage("Signup successful! Redirecting to verification...")
-      setTimeout(() => router.push("/verify"), 1500)
+      setTimeout(() => router.push("/signup/verify"), 1500)
     } catch (error) {
       console.error(error)
       setMessage("Signup failed. Try again.")

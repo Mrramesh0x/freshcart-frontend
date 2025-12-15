@@ -27,7 +27,7 @@ export default function VerifyEmailPage() {
         toast.success("Email verified successfully")
         setTimeout(() => {
            setTimeout(() => {
-       router.push("/")
+       router.push("/login")
      }, 4000);
         }, 1500)
       } else {

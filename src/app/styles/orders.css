@@ -1,4 +1,4 @@
-/* 🔹 Orders Page Wrapper */
+
 .orders-page {
   font-family: "Poppins", sans-serif;
   padding: 32px 24px;
@@ -6,7 +6,6 @@
   min-height: 100vh;
 }
 
-/* 🔹 Page Title */
 .orders-title {
   font-size: 1.6rem;
   font-weight: 700;
@@ -15,7 +14,6 @@
   text-align: left;
 }
 
-/* 🔹 State Text (Empty / Loading / Error) */
 .no-orders,
 .orders-loading,
 .orders-error {
@@ -25,14 +23,14 @@
   margin-top: 60px;
 }
 
-/* 🔹 Orders List Layout */
+
 .orders-list {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-/* 🔹 Individual Order Card */
+
 .order-card {
   display: flex;
   align-items: center;
@@ -50,7 +48,7 @@
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-/* 🔹 Order Item Thumbnail */
+
 .order-item-img {
   width: 65px;
   height: 65px;
@@ -60,7 +58,7 @@
   flex-shrink: 0;
 }
 
-/* 🔹 Order Info */
+
 .order-info {
   flex: 1;
   display: flex;
@@ -80,7 +78,7 @@
   color: #4a00e0;
 }
 
-/* 🔹 Arrow / Indicator */
+
 .order-arrow {
   font-size: 18px;
   color: #aaa;
@@ -90,12 +88,20 @@
   color: #4a00e0;
 }
 
+.no-orders{
+  margin-top: 200px;
+}
+
 @media (max-width: 480px) {
+
+  .no-orders{
+    margin-top: 300px;
+  }
   .orders-page {
     padding: 16px 12px;
   }
   .orders-title {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
   }
   .order-card {
@@ -104,9 +110,9 @@
     padding: 12px;
   }
   .order-item-img {
-    width: 100%;      /* full width of card */
-    max-width: 120px;  /* limit max width */
-    height: auto;      /* maintain aspect ratio */
+    width: 100%;     
+    max-width: 120px;  
+    height: auto;      
   }
   .order-info {
     width: 100%;

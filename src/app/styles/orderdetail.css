@@ -1,4 +1,3 @@
-/* 🔹 Page Wrapper */
 .order-detail-page {
   display: flex;
   justify-content: center;
@@ -8,7 +7,6 @@
   min-height: 100vh;
 }
 
-/* 🔹 Card Container */
 .order-detail-card {
   width: 100%;
   max-width: 850px;
@@ -23,7 +21,7 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-/* 🔹 Title */
+
 .order-title {
   font-size: 1.6rem;
   font-weight: 600;
@@ -33,7 +31,7 @@
   color: #222;
 }
 
-/* 🔹 Meta Info */
+
 .order-meta p {
   margin: 6px 0;
   font-size: 15px;
@@ -59,7 +57,6 @@
   color: #e74c3c;
 }
 
-/* 🔹 Shipping Address */
 .shipping-address {
   margin-top: 24px;
   padding: 16px 18px;
@@ -121,7 +118,7 @@
   color: #666;
 }
 
-/* 🔹 Action Buttons */
+
 .order-actions {
   display: flex;
   justify-content: flex-end;
@@ -155,7 +152,7 @@
   background: #c0392b;
 }
 
-/* 🔹 Loading & Not Found */
+
 .loading,
 .not-found {
   text-align: center;
@@ -164,7 +161,7 @@
   color: #555;
 }
 
-/* 🔹 Responsive */
+
 @media (max-width: 768px) {
   .order-item {
     flex-direction: column;

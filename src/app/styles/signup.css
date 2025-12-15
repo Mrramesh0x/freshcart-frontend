@@ -78,26 +78,39 @@
   color: #333;
 }
 
-/* 🔹 Mobile responsiveness */
+
 @media (max-width: 480px) {
+  .signup-page {
+    padding: 16px;
+  }
+
   .signup-form {
-    padding: 32px 24px;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 340px;
+    padding: 28px 20px;
+    border-radius: 14px;
   }
 
   .signup-title {
     font-size: 22px;
+    margin-bottom: 18px;
   }
 
   .signup-input,
   .signup-btn {
-    max-width: 260px;
-    font-size: 14px;
-    padding: 12px 14px;
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px; 
+    padding: 14px;
+    box-sizing: border-box;
+  }
+
+  .signup-message {
+    font-size: 13px;
+    text-align: center;
   }
 }
 
-/* 🔹 Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

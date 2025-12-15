@@ -90,12 +90,18 @@
   text-decoration: underline;
 }
 
-/* ✅ Responsive Design for Mobile Phones */
 @media (max-width: 480px) {
+  .login-wrapper {
+    padding: 12px;
+  }
+
   .login-container {
-    width: 90%;
-    padding: 28px 20px;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 340px;
+    padding: 26px 18px;
+    border-radius: 14px;
+    text-align: center;
+    margin-bottom: 170px;
   }
 
   .login-heading {
@@ -103,21 +109,35 @@
     margin-bottom: 18px;
   }
 
-  .login-input-field {
-    width: 100%;
-    font-size: 15px;
-    padding: 12px 14px;
-    margin-bottom: 14px;
+  .login-form-box {
+    align-items: center;
   }
+
+.login-input-field {
+  width: 100%;
+  max-width: 100%;
+  font-size: 16px; 
+  padding: 14px 14px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
 
   .login-btn {
     width: 100%;
+    max-width: 100%;
     font-size: 15px;
     padding: 12px 14px;
+  }
+
+  .login-error {
+    text-align: center;
+    font-size: 13px;
   }
 
   .login-signup-text {
     font-size: 13px;
-    margin-top: 12px;
+    margin-top: 14px;
+    text-align: center;
   }
 }

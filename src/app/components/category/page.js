@@ -10,20 +10,20 @@ export default function CategoryPage() {
     { name: "Chips", img: "Unclechips.jpg" },
     { name: "Namkeen", img: "Haldiram-all-in-one.jpg" },
     { name: "ColdDrink", img: "Thumsup.jpg" },
-    { name: "Tea", img: "Unclechips.jpg" },
-    { name: "Coffee", img: "Unclechips.jpg" },
-    { name: "Soap", img: "Unclechips.jpg" },
-    { name: "Shampoo", img: "Unclechips.jpg" },
-    { name: "Dal", img: "Unclechips.jpg" },
-    { name: "Atta", img: "Unclechips.jpg" },
-    { name: "Rice", img: "Unclechips.jpg" },
+    { name: "Tea", img: "Tata-tea.jpg" },
+    { name: "Coffee", img: "Nescafe.jpg" },
+    { name: "Soap", img: "Soap.jpg" },
+    { name: "Shampoo", img: "Shampoo.jpg" },
+    { name: "Dal", img: "Dal.jpg" },
+    { name: "Atta", img: "Atta.jpg" },
+    { name: "Rice", img: "Rice.jpg" },
   ]
 
   useEffect(() => {
     const container = scrollRef.current
     if (!container) return
 
-    let direction = 1 // 1 = right, -1 = left
+    let direction = 1 
     const speed = 2
     let animationId
 

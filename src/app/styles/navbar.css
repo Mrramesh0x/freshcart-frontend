@@ -42,16 +42,18 @@
   display: flex;
   align-items: center;
   background: rgba(255,255,255,0.15);
-  padding: 4px 10px;
+  padding: 4px 16px;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 18px;
   color: #fff;
   cursor: pointer;
+  width: 82px;
 }
 
 .delivery-label {
-  font-size: 10px;
-  opacity: 0.8;
+  width: 100%;
+  font-size: 12px;
+  
 }
 
 .delivery-city-wrap {
@@ -164,7 +166,42 @@
   background: #f0f0f0;
 }
 
-/* Responsive Adjustments */
+
+.delivery-location {
+  position: relative;
+}
+
+.city-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 140px;
+  max-width: 180px;
+  background: #fff;
+  color: #4a00e0;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  padding: 6px;
+  z-index: 1000;
+}
+
+
+.city-option {
+  padding: 8px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.city-option:hover {
+  background: #f1ebff;
+  color: #4a00e0;
+}
+
+
+
+
 @media (max-width: 768px) {
   .logo {
     font-size: 16px;
@@ -174,11 +211,24 @@
     font-size: 20px;
   }
 
-  .delivery-to {
-    padding: 3px 6px;
-    font-size: 11px;
+   .delivery-to {
+    display: flex;
+    padding: 4px 7px;
+    font-size: 12px;
+    /* width: auto; */
   }
 
+   .delivery-label {
+    display: flex;
+    /* padding: 4px 8px; */
+    font-size: 10px;
+    /* width: auto; */
+  }
+
+  .delivery-city-wrap {
+    font-size: 13px;
+    font-weight: 600;
+  }
   .delivery-city-wrap {
     font-size: 12px;
   }
@@ -208,11 +258,23 @@
   .logo-icon {
     font-size: 18px;
   }
-
-  .delivery-to {
-    display: none; /* hide delivery info on tiny screens */
+ .delivery-to {
+    display: flex;
+    padding: 4px 8px;
+    font-size: 11px;
+    width: auto;
   }
 
+  .delivery-label {
+    display: flex;
+    font-size: 10px;
+    width: auto;
+  }
+
+  .delivery-city-wrap {
+    font-size: 11px;
+    font-weight: 600;
+  }
   .auth-buttons {
     gap: 6px;
   }
@@ -220,8 +282,9 @@
   .login-nav-btn,
   .signup-nav-btn,
   .cart-nav-btn {
-    padding: 6px 12px; /* keep buttons consistent */
+    padding: 6px 12px; 
     font-size: 11px;
+    left: 2px;
   }
 
   .cart-nav-btn::after {

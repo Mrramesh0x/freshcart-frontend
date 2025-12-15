@@ -196,7 +196,7 @@ useEffect(() => {
           <p>
             Total Price: <strong>₹{totalPrice}</strong>
           </p>
-          <label>{error}</label>
+          <label className="email-verify">{error}</label>
           <button className="place-order-btn" onClick={handlePlaceOrder}>
             Place Order
           </button>

@@ -1,4 +1,4 @@
-/* 🔹 Cart Page */
+
 .cart-page {
   max-width: 1200px;
   margin: 2rem auto;
@@ -29,7 +29,7 @@
   color: #0056b3;
 }
 
-/* 🔹 Cart Layout */
+
 .cart-container {
   display: flex;
   gap: 2rem;
@@ -71,7 +71,7 @@
   background: #e64a19;
 }
 
-/* 🔹 Cart Item */
+
 .cart-item {
   display: flex;
   gap: 1rem;
@@ -107,7 +107,7 @@
   margin-bottom: 0.6rem;
 }
 
-/* 🔹 Quantity Controls */
+
 .cart-qty {
   display: flex;
   align-items: center;
@@ -136,7 +136,7 @@
   font-weight: 500;
 }
 
-/* 🔹 Remove Button */
+
 .remove-btn {
   padding: 0.4rem 0.8rem;
   background: #f44336;
@@ -151,7 +151,7 @@
   background: #d32f2f;
 }
 
-/* 🔹 Empty Cart */
+
 .empty-cart {
   text-align: center;
   font-size: 1.2rem;
@@ -159,78 +159,68 @@
   margin-top: 2rem;
 }
 
-/* 🔹 Responsive for Tablets */
-@media (max-width: 768px) {
-  .cart-container {
-    flex-direction: column;
-  }
-  .cart-summary {
-    width: 100%;
-    margin-top: 1.5rem;
-  }
-}
-
-/* ✅ Responsive for Mobile Phones */
 @media (max-width: 480px) {
+ .cart-items{
+  width: 100%;
+ }
   .cart-page {
     padding: 1rem;
-    margin: 1rem auto;
   }
 
   .cart-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
   }
 
   .cart-title {
     font-size: 1.4rem;
   }
 
-  .cart-item {
+  .cart-container {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-    padding: 0.8rem;
+    gap: 1rem;
+  }
+
+ 
+  .cart-item {
+    
+    flex-direction: row;
+    align-items: center;
   }
 
   .cart-item-img img {
-    width: 100%;
-    height: 120px;
-  }
-
-  .cart-item-info {
-    width: 100%;
+    width: 65px;
+    height: 65px;
   }
 
   .cart-item-name {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 
   .cart-item-price {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .cart-qty {
+    margin: 6px 0;
+  }
+
+  .remove-btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    width: fit-content;
   }
 
   .cart-summary {
+    width: 80%;
     padding: 1rem;
+    margin-left: 30px;
   }
 
   .buy-btn {
     font-size: 14px;
     padding: 12px 0;
-  }
-
-  .qty-btn {
-    width: 28px;
-    height: 28px;
-  }
-
-  .qty-value {
-    font-size: 0.9rem;
-  }
-
-  .remove-btn {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.6rem;
   }
 }

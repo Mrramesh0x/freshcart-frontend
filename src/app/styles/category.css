@@ -2,7 +2,7 @@
   padding: 20px;
   font-family: "Poppins", sans-serif;
   background: #f8f8f8;
-  /* min-height: 100vh; */
+
 }
 
 .page-title {
@@ -12,7 +12,7 @@
   color: #4a00e0;
 }
 
-/* Horizontal scroll for categories */
+
 .category-grid {
   display: flex;
   gap: 12px;
@@ -21,12 +21,11 @@
   scroll-behavior: smooth;
 }
 
-/* Hide default scrollbar */
+
 .category-grid::-webkit-scrollbar {
   display: none;
 }
 
-/* Individual category card */
 .category-card {
   flex: 0 0 auto;
   width: 120px;
@@ -63,7 +62,7 @@
   text-align: center;
 }
 
-/* Optional: outer container for scroll padding */
+
 .category-scroll {
   display: flex;
   gap: 12px;
@@ -71,7 +70,7 @@
   padding: 10px 0;
 }
 
-/* 🔹 Responsive adjustments */
+
 @media (max-width: 768px) {
   .category-card {
     width: 100px;
