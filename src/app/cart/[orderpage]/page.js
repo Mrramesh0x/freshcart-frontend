@@ -3,9 +3,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/navigation";
-
+import { clearCart } from "@/app/store/cartReducer";
+import { useDispatch } from "react-redux";
 export default function CheckoutPage() {
   const router = useRouter()
+  const dispatch = useDispatch()
+  const [loading,setLoading] = useState(false)
   const [token, setToken] = useState(null);
   const [error, setError] = useState("");
   const [totalPrice, setTotalPrice] = useState(0);
@@ -57,47 +60,65 @@ useEffect(() => {
     setAddress((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handlePlaceOrder = async () => {
-    try {
-      if (!token) {
-        toast.error("Please login first!");
-        return;
-      }
+const handlePlaceOrder = async () => {
+  if (loading) return;
 
-
-      const orderBody = {
-        items: cartItems.map((item) => ({
-          productId: item._id,
-          name: item.name,
-          price: item.price,
-          quantity: quantities[item._id] || 1,
-        })),
-        totalAmount: totalPrice,
-        shippingAddress: address,
-        paymentMethod,
-      };
-
-      const { data } = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/createorders`,
-        orderBody,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      toast.success("Order placed successfully!");
-      localStorage.removeItem("cartItems");
-      localStorage.removeItem("cartQuantities");
-     setTimeout(() => {
-       router.push("/orders")
-     }, 3000);
-    } catch (err) {
-      setError(err.response?.data?.error);
+  try {
+    if (!token) {
+      toast.error("Please login first!");
+      return;
     }
-  };
+
+    setLoading(true);
+
+    const orderBody = {
+      items: cartItems.map((item) => ({
+        productId: item._id,
+        name: item.name,
+        price: item.price,
+        quantity: quantities[item._id] || 1,
+      })),
+      totalAmount: totalPrice,
+      shippingAddress: address,
+      paymentMethod,
+    };
+
+    const { data } = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/createorders`,
+      orderBody,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (!data) {
+      throw new Error("Order failed");
+    }
+
+    toast.success("Order placed successfully!");
+
+    
+    localStorage.removeItem("cartItems");
+    localStorage.removeItem("cartQuantities");
+    dispatch(clearCart());
+
+    
+    setTimeout(() => {
+      router.replace("/orders"); 
+    }, 1200);
+
+  } catch (err) {
+    console.error(err);
+    toast.error("Order failed. Please try again.");
+    setError(err.response?.data?.error || "Something went wrong");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="checkout-page">
@@ -197,9 +218,14 @@ useEffect(() => {
             Total Price: <strong>₹{totalPrice}</strong>
           </p>
           <label className="email-verify">{error}</label>
-          <button className="place-order-btn" onClick={handlePlaceOrder}>
-            Place Order
-          </button>
+          <button
+  className="place-order-btn"
+  onClick={handlePlaceOrder}
+  disabled={loading}
+>
+  {loading ? "Placing Order..." : "Place Order"}
+</button>
+
         </div>
       </div>
     </div>

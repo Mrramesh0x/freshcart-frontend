@@ -5,7 +5,8 @@ import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/navigation";
 
 const OrderDetail = ({ params }) => {
-  const orderId = params.orderid; 
+  const resolvedParams = React.use(params);
+  const orderId = resolvedParams.orderid; 
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);

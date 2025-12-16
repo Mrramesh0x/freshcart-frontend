@@ -15,11 +15,15 @@ add(state, action) {
 remove(state, action) {
   return state.filter((item) => item._id !== action.payload);
 },
+clearCart(){
+return [];
+},
+
 setCart(state, action) {
       return action.payload; 
     },
 
     }
 })
-export const {add,remove,setCart} = cartSlice.actions;
+export const {add,remove,setCart,clearCart} = cartSlice.actions;
 export default cartSlice.reducer;
