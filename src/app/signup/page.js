@@ -8,21 +8,27 @@ export default function SignupPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [message, setMessage] = useState("")
+  const [loading, setLoading] = useState(false)
   const router = useRouter()
 
   const handleSignup = async () => {
+    setLoading(true); 
+    setMessage("");
     try {
       const res = await axios.post(
         "https://freshcart-backend-9bxk.onrender.com/api/signup",
         { name, email, password },
         { withCredentials: true }
       )
-      console.log(res)
+  
       setMessage("Signup successful! Redirecting to verification...")
       setTimeout(() => router.push("/signup/verify"), 1500)
     } catch (error) {
       console.error(error)
-      setMessage("Signup failed. Try again.")
+      setMessage("Enter details correctly")
+    }
+    finally{
+      setLoading(false)
     }
   }
 
@@ -58,8 +64,8 @@ export default function SignupPage() {
           required
         />
 
-        <button type="button" onClick={handleSignup} className="signup-btn">
-          Sign Up
+        <button type="button" onClick={handleSignup} disabled={loading}  className="signup-btn">
+         {loading ? "Registering..." : "Register"}
         </button>
 
         {message && <p className="signup-message">{message}</p>}

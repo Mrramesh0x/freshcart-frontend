@@ -59,7 +59,9 @@ const OrderDetail = ({ params }) => {
     toast.error("Tracking feature coming soon 🚚");
   };
 
-  if (loading) return <h2 className="loading">Loading Order...</h2>;
+  if (loading) return  <div className="page-loader">
+      <div className="spinner"></div>
+    </div>;
   if (!order) return <h2 className="not-found">Order not found</h2>;
 
   const { shippingAddress } = order;
