@@ -78,7 +78,7 @@
   color: #333;
 }
 
-
+/* 🔹 Mobile responsiveness */
 @media (max-width: 480px) {
   .signup-page {
     padding: 16px;

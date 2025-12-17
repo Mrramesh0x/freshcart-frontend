@@ -33,7 +33,8 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="signup-page">
+    <div className="signup-page"
+    >
       <div className="signup-form">
         <h2 className="signup-title">Sign Up</h2>
 

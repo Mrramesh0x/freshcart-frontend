@@ -39,7 +39,16 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="login-wrapper">
+    <div
+  className="login-wrapper"
+  style={{
+    backgroundImage: "url('/freshcart-bg.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    overflow: "hidden"
+  }}
+>
        <ToastContainer position="top-center" autoClose={1000} />
       <div className="login-container">
         <h2 className="login-heading">Login</h2>

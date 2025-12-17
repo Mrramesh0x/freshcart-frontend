@@ -15,7 +15,6 @@ import "./styles/orderdetail.css"
 import "./styles/verifycode.css"
 import "./styles/footer.css"
 import Providers from "./provider/provider.js";
-import Footer from "./footer/page";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -38,7 +37,6 @@ export default function RootLayout({ children }) {
         <Providers>
           <Navbar/>
         {children}</Providers>
-        <Footer/>
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import { fetchProducts } from './store/productReducer';
 import { add } from './store/cartReducer';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import Footer from './footer/page';
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -61,6 +62,7 @@ toast.success("Product added to cart")
         )}
       </div>
     </div>
+    <Footer/>
       </div>
   )
 }
